@@ -17,7 +17,7 @@ class MapLayer {
 
   final int id;
   final MapDataSource dataSource;
-  final MapTheme theme;
+  MapTheme theme;
   final MapHighlightTheme? highlightTheme;
   final String? name;
 
@@ -26,7 +26,10 @@ class MapLayer {
   bool get hoverDrawable {
     return highlightTheme != null && highlightTheme!.hasValue();
   }
-
+set setTheme(MapTheme theme){
+    this.theme = theme;
+  }
+  
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
